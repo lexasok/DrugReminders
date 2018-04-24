@@ -22,7 +22,8 @@ public class Person {
     }
 
     public int getDrugsCount() {
-
-        return drugs.length;
+        if (drugs != null){
+            return drugs.length;
+        } else return 0;
     }
 }
