@@ -21,4 +21,8 @@ public class Person {
         this.drugs = drugs;
     }
 
+    public int getDrugsCount() {
+
+        return 0;
+    }
 }
