@@ -20,4 +20,5 @@ public class Person {
     public void setDrugs(Drug[] drugs) {
         this.drugs = drugs;
     }
+
 }
