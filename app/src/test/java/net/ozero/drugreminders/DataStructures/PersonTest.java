@@ -7,7 +7,8 @@ import static org.junit.Assert.*;
 public class PersonTest {
 
     @Test
-    public void getDrugsCount() {
-
+    public void getDrugsCountDrugsNullAssertZero() {
+        Person person = new Person();
+        assertEquals(0, person.getDrugsCount());
     }
 }

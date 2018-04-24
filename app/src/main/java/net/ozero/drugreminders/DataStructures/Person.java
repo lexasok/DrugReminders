@@ -23,6 +23,6 @@ public class Person {
 
     public int getDrugsCount() {
 
-        return 0;
+        return drugs.length;
     }
 }
