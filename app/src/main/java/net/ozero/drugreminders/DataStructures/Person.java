@@ -31,6 +31,5 @@ public class Person {
 
     public int getDrugsCount() {
         return drugs.size();
-
     }
 }

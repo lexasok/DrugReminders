@@ -15,7 +15,7 @@ import java.util.List;
 public class MainActivityPersonsListAdapter extends RecyclerView.Adapter<MainActivityPersonsListAdapter.PersonsViewHolder>{
     List<Person> persons;
 
-    MainActivityPersonsListAdapter(List<Person> persons) {
+    public MainActivityPersonsListAdapter(List<Person> persons) {
         this.persons = persons;
     }
 
