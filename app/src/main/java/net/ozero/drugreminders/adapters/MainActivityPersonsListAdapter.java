@@ -40,6 +40,11 @@ public class MainActivityPersonsListAdapter extends RecyclerView.Adapter<MainAct
         return persons.size();
     }
 
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
     public class PersonsViewHolder extends RecyclerView.ViewHolder{
         TextView name;
         TextView drugsCount;
