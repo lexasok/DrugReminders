@@ -2,6 +2,9 @@ package net.ozero.drugreminders.DataStructures;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class PersonTest {
@@ -18,7 +21,10 @@ public class PersonTest {
         Drug drug1 = new Drug();
         Drug drug2 = new Drug();
         Drug drug3 = new Drug();
-        Drug[] drugs = {drug1, drug2, drug3};
+        List<Drug> drugs = new ArrayList<>();
+        drugs.add(drug1);
+        drugs.add(drug2);
+        drugs.add(drug3);
         person.setDrugs(drugs);
         assertEquals(3, person.getDrugsCount());
     }

@@ -1,12 +1,16 @@
 package net.ozero.drugreminders.DataStructures;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person {
 
     private String name;
-    private Drug[] drugs;
+    private List<Drug> drugs;
 
     public Person(String name) {
         this.name = name;
+        drugs = new ArrayList<>();
     }
 
     public String getName() {
@@ -17,17 +21,16 @@ public class Person {
         this.name = name;
     }
 
-    public Drug[] getDrugs() {
+    public List<Drug> getDrugs() {
         return drugs;
     }
 
-    public void setDrugs(Drug[] drugs) {
+    public void setDrugs(List<Drug> drugs) {
         this.drugs = drugs;
     }
 
     public int getDrugsCount() {
-        if (drugs != null){
-            return drugs.length;
-        } else return 0;
+        return drugs.size();
+
     }
 }
