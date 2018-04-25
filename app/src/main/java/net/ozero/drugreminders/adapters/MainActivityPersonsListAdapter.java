@@ -2,15 +2,31 @@ package net.ozero.drugreminders.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import net.ozero.drugreminders.DataStructures.Person;
+import net.ozero.drugreminders.R;
+
+import java.util.List;
+
 public class MainActivityPersonsListAdapter extends RecyclerView.Adapter<MainActivityPersonsListAdapter.PersonsViewHolder>{
+    List<Person> persons;
+
+    MainActivityPersonsListAdapter(List<Person> persons) {
+        this.persons = persons;
+    }
+
     @NonNull
     @Override
     public PersonsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.rv_row_persons, parent,false
+        );
+        PersonsViewHolder personsViewHolder = new PersonsViewHolder(view);
+        return personsViewHolder;
     }
 
     @Override
@@ -20,7 +36,7 @@ public class MainActivityPersonsListAdapter extends RecyclerView.Adapter<MainAct
 
     @Override
     public int getItemCount() {
-        return 0;
+        return persons.size();
     }
 
     public class PersonsViewHolder extends RecyclerView.ViewHolder{
@@ -29,6 +45,8 @@ public class MainActivityPersonsListAdapter extends RecyclerView.Adapter<MainAct
 
         public PersonsViewHolder(View itemView) {
             super(itemView);
+            name = itemView.findViewById(R.id.personsNameActivityMain);
+            drugsCount = itemView.findViewById(R.id.personsDrugsCountActivityMain);
 
         }
     }
