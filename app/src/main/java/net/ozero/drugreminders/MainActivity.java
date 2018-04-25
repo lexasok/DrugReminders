@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
         mRV = findViewById(R.id.recyclerViewPersonList);
 
         //RV
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        mRV.setLayoutManager(layoutManager);
-        persons = ((DrugRemindersApp) getApplication()).persons;
-        adapter = new MainActivityPersonsListAdapter(persons);
-        mRV.setAdapter(adapter);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+//        mRV.setLayoutManager(layoutManager);
+//        persons = ((DrugRemindersApp) getApplication()).persons;
+//        adapter = new MainActivityPersonsListAdapter(persons);
+//        mRV.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
