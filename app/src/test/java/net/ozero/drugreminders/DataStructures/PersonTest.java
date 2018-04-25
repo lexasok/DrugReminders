@@ -8,13 +8,13 @@ public class PersonTest {
 
     @Test
     public void getDrugsCountDrugsNullAssertZero() {
-        Person person = new Person();
+        Person person = new Person("1");
         assertEquals(0, person.getDrugsCount());
     }
 
     @Test
     public void getDrugsCountDrugsNotNull() {
-        Person person = new Person();
+        Person person = new Person("2");
         Drug drug1 = new Drug();
         Drug drug2 = new Drug();
         Drug drug3 = new Drug();
