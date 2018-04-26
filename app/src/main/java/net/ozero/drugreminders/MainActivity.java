@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import net.ozero.drugreminders.DataStructures.Person;
 import net.ozero.drugreminders.adapters.MainActivityPersonsListAdapter;
@@ -46,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         //((DrugRemindersApp) getApplication()).getPersons()
         adapter = new MainActivityPersonsListAdapter(((DrugRemindersApp) getApplication()).getPersons());
         mRV.setAdapter(adapter);
-
     }
 
     @Override

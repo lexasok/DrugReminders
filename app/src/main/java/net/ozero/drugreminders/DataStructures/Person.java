@@ -30,6 +30,10 @@ public class Person {
     }
 
     public int getDrugsCount() {
-        return drugs.size();
+            return drugs.size();
+    }
+
+    public String getDrugsCountToString() {
+        return String.valueOf(drugs.size());
     }
 }
