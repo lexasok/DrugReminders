@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         //RV
         LinearLayoutManager lMM = new LinearLayoutManager(this);
         mRV.setLayoutManager(lMM);
-        //((DrugRemindersApp) getApplication()).getPersons()
         adapter = new MainActivityPersonsListAdapter(((DrugRemindersApp) getApplication()).getPersons());
         mRV.setAdapter(adapter);
     }
