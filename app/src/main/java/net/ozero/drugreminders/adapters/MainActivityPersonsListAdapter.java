@@ -32,7 +32,7 @@ public class MainActivityPersonsListAdapter extends RecyclerView.Adapter<MainAct
     @Override
     public void onBindViewHolder(@NonNull PersonsViewHolder holder, int position) {
         holder.name.setText(persons.get(position).getName());
-        holder.drugsCount.setText(persons.get(position).getDrugsCount());
+//        holder.drugsCount.setText(persons.get(position).getDrugsCount());
     }
 
     @Override

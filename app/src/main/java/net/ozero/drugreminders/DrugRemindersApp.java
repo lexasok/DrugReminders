@@ -29,4 +29,8 @@ public class DrugRemindersApp extends Application {
         persons.add(person2);
         persons.add(person3);
     }
+
+    public List<Person> getPersons() {
+        return persons;
+    }
 }

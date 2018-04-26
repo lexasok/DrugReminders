@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import net.ozero.drugreminders.DataStructures.Person;
 import net.ozero.drugreminders.adapters.MainActivityPersonsListAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +31,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mRV = findViewById(R.id.RVmainActivityPersonsList);
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //RV
+        LinearLayoutManager lMM = new LinearLayoutManager(this);
+        mRV.setLayoutManager(lMM);
+        //((DrugRemindersApp) getApplication()).getPersons()
+        adapter = new MainActivityPersonsListAdapter(((DrugRemindersApp) getApplication()).getPersons());
+        mRV.setAdapter(adapter);
 
     }
 
