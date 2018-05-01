@@ -23,7 +23,7 @@ public class MainActivityPersonsListAdapter extends RecyclerView.Adapter<MainAct
     @Override
     public PersonsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.rv_row_persons, parent,false
+                R.layout.rv_row_persons_main_activity, parent,false
         );
         PersonsViewHolder personsViewHolder = new PersonsViewHolder(view);
         return personsViewHolder;
