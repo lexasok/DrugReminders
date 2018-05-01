@@ -10,10 +10,16 @@ import java.util.List;
 
 public class DrugRemindersApp extends Application {
     List<Person> persons;
+    DBHelper dbHelper;
+
 
     @Override
     public void onCreate() {
         super.onCreate();
+        dbHelper = new DBHelper(this);
+
+
+
         persons = new ArrayList<>();
 
         //fake data
