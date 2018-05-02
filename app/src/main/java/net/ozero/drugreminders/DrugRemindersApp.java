@@ -3,6 +3,7 @@ package net.ozero.drugreminders;
 import android.app.Application;
 import android.content.ContentValues;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import net.ozero.drugreminders.DataStructures.Person;
@@ -13,6 +14,7 @@ import java.util.List;
 public class DrugRemindersApp extends Application {
     List<Person> persons;
     DBHelper dbHelper;
+    ArrayList<String> personsNamesDB;
 
 
     @Override
@@ -24,12 +26,28 @@ public class DrugRemindersApp extends Application {
         ContentValues contentValues = new ContentValues();
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        contentValues.put("NAME", "test name 1");
-        contentValues.put("NAME", "test name 2");
+        contentValues.put(DBHelper.NAME, "test name 1");
+        contentValues.put(DBHelper.NAME, "test name 2");
 
         long rowId = db.insert(DBHelper.PERSONS_TABLE_NAME, null, contentValues);
 
+        Cursor cursor = db.query(
+                DBHelper.PERSONS_TABLE_NAME,
+                null, null,
+                null, null,
+                null, null
+        );
 
+        personsNamesDB = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            int idColumnIndex = cursor.getColumnIndex("id");
+            int nameColumnIndex = cursor.getColumnIndex(DBHelper.NAME);
+
+            do {
+                personsNamesDB.add(cursor.getString(nameColumnIndex));
+            } while (cursor.moveToNext());
+        }
 
 
         persons = new ArrayList<>();
