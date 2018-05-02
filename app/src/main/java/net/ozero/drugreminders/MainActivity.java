@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         mRV.setLayoutManager(lMM);
         adapter = new MainActivityPersonsListAdapter(((DrugRemindersApp) getApplication()).getPersons());
         mRV.setAdapter(adapter);
+
+        Toast.makeText(this, ((DrugRemindersApp) getApplication()).personsNamesDB.get(0), Toast.LENGTH_LONG).show();
+
     }
 
     @Override
