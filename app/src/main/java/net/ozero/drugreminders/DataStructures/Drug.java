@@ -3,7 +3,7 @@ package net.ozero.drugreminders.DataStructures;
 public class Drug {
     private String name;
     private Dosage dosage;
-    private Schedule shedule;
+    private Schedule schedule;
 
     public String getName() {
         return name;
@@ -21,12 +21,12 @@ public class Drug {
         this.dosage = dosage;
     }
 
-    public Schedule getShedule() {
-        return shedule;
+    public Schedule getSchedule() {
+        return schedule;
     }
 
-    public void setShedule(Schedule shedule) {
-        this.shedule = shedule;
+    public void setSchedule(Schedule schedule) {
+        this.schedule = schedule;
     }
 
 
