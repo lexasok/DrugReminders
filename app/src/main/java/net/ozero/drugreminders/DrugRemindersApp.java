@@ -26,8 +26,7 @@ public class DrugRemindersApp extends Application {
         ContentValues contentValues = new ContentValues();
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        contentValues.put(DBHelper.NAME, "test name 1");
-        contentValues.put(DBHelper.NAME, "test name 2");
+        contentValues.put("COLUMN_NAME", "test name 1");
 
         long rowId = db.insert(DBHelper.PERSONS_TABLE_NAME, null, contentValues);
 
@@ -40,8 +39,9 @@ public class DrugRemindersApp extends Application {
 
         personsNamesDB = new ArrayList<>();
 
-        if (cursor.moveToFirst()) {
-            int idColumnIndex = cursor.getColumnIndex("id");
+        boolean moveToFirst = cursor.moveToFirst();
+
+        if (moveToFirst) {
             int nameColumnIndex = cursor.getColumnIndex(DBHelper.NAME);
 
             do {
