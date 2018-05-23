@@ -2,7 +2,6 @@ package net.ozero.drugreminders;
 
 import android.app.Application;
 import android.content.ContentValues;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -14,7 +13,7 @@ import java.util.List;
 public class DrugRemindersApp extends Application {
     List<Person> persons;
     DBHelper dbHelper;
-    ArrayList<String> personsNamesDB;
+    ArrayList<String> personsNames;
 
 
     @Override
@@ -33,21 +32,21 @@ public class DrugRemindersApp extends Application {
         database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
 
         Cursor cursor = database.query(
-                DBHelper.PERSONS_TABLE_NAME,
+                DBHelper.TABLE_PERSONS,
                 null, null,
                 null, null,
                 null, null
         );
 
-        personsNamesDB = new ArrayList<>();
+        personsNames = new ArrayList<>();
 
         boolean moveToFirst = cursor.moveToFirst();
 
         if (moveToFirst) {
-            int nameColumnIndex = cursor.getColumnIndex(DBHelper.NAME);
+            int nameColumnIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
 
             do {
-                personsNamesDB.add(cursor.getString(nameColumnIndex));
+                personsNames.add(cursor.getString(nameColumnIndex));
             } while (cursor.moveToNext());
         }
 
