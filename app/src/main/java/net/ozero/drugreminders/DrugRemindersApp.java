@@ -52,11 +52,11 @@ public class DrugRemindersApp extends Application {
 
 
         persons = new ArrayList<>();
-
-        //fake data
-        loadFakePersons();
+        //DATA from DB
+        this.laodPersonsFromDB(persons, personsNames);
 
     }
+
 
     private void loadFakePersons() {
         Person person1 = new Person("Ahtung");
@@ -65,6 +65,12 @@ public class DrugRemindersApp extends Application {
         persons.add(person1);
         persons.add(person2);
         persons.add(person3);
+    }
+
+    private void laodPersonsFromDB(List<Person> persons, ArrayList<String> personsNames) {
+        for (int i = 0; i < personsNames.size(); i++) {
+            persons.add(new Person(personsNames.get(i)));
+        }
     }
 
     public List<Person> getPersons() {
