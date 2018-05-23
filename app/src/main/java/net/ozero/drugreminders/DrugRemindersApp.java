@@ -24,13 +24,15 @@ public class DrugRemindersApp extends Application {
         //database
         dbHelper = new DBHelper(this);
         ContentValues contentValues = new ContentValues();
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        contentValues.put("COLUMN_NAME", "test name 1");
+        contentValues.put(DBHelper.KEY_NAME, "test name 1");
+        contentValues.put(DBHelper.KEY_NAME, "test name 2");
+        contentValues.put(DBHelper.KEY_NAME, "test name 3");
 
-        long rowId = db.insert(DBHelper.PERSONS_TABLE_NAME, null, contentValues);
+        database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
 
-        Cursor cursor = db.query(
+        Cursor cursor = database.query(
                 DBHelper.PERSONS_TABLE_NAME,
                 null, null,
                 null, null,
