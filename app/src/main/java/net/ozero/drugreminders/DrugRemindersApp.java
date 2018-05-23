@@ -26,10 +26,15 @@ public class DrugRemindersApp extends Application {
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
         contentValues.put(DBHelper.KEY_NAME, "test name 1");
-        contentValues.put(DBHelper.KEY_NAME, "test name 2");
-        contentValues.put(DBHelper.KEY_NAME, "test name 3");
-
         database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
+
+        contentValues.put(DBHelper.KEY_NAME, "test name 2");
+        database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
+
+        contentValues.put(DBHelper.KEY_NAME, "test name 3");
+        database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
+
+
 
         Cursor cursor = database.query(
                 DBHelper.TABLE_PERSONS,
@@ -53,12 +58,12 @@ public class DrugRemindersApp extends Application {
 
         persons = new ArrayList<>();
         //DATA from DB
-        this.laodPersonsFromDB(persons, personsNames);
+        loadPersonsFromDB(persons, personsNames);
 
     }
 
 
-    private void laodPersonsFromDB(List<Person> persons, ArrayList<String> personsNames) {
+    private void loadPersonsFromDB(List<Person> persons, ArrayList<String> personsNames) {
         for (int i = 0; i < personsNames.size(); i++) {
             persons.add(new Person(personsNames.get(i)));
         }
