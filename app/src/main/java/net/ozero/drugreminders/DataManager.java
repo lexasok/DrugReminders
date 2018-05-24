@@ -8,13 +8,13 @@ import net.ozero.drugreminders.DataStructures.Person;
 
 import java.util.ArrayList;
 
-public class DBManager {
+public class DataManager {
 
     private Context context;
     private SQLiteDatabase database;
     private DBHelper dbHelper;
 
-    public DBManager(Context context) {
+    public DataManager(Context context) {
         this.context = context;
         dbHelper = new DBHelper(context);
         database = dbHelper.getWritableDatabase();
@@ -37,6 +37,13 @@ public class DBManager {
             } while (cursor.moveToNext());
         }
         return personsNames;
+    }
+
+    public ArrayList<Person> getPersons() {
+        ArrayList<Person> persons = new ArrayList<>();
+        ArrayList<String> personsNames = getPersonsNamesList();
+
+        return null;
     }
 
 }
