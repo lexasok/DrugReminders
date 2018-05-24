@@ -42,8 +42,10 @@ public class DataManager {
     public ArrayList<Person> getPersons() {
         ArrayList<Person> persons = new ArrayList<>();
         ArrayList<String> personsNames = getPersonsNamesList();
-
-        return null;
+        for (int i = 0; i < personsNames.size(); i++) {
+            persons.add(new Person(personsNames.get(i)));
+        }
+        return persons;
     }
 
 }

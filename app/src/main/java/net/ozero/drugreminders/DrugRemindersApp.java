@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DrugRemindersApp extends Application {
-    List<Person> persons;
-    DBHelper dbHelper;
+    DataManager dataManager;
     ArrayList<String> personsNames;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
+        dataManager = new DataManager(this);
 
 
     }
@@ -27,6 +27,6 @@ public class DrugRemindersApp extends Application {
 
 
     public List<Person> getPersons() {
-        return persons;
+        return dataManager.getPersons();
     }
 }
