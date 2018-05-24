@@ -1,6 +1,7 @@
 package net.ozero.drugreminders;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import net.ozero.drugreminders.DataStructures.Person;
@@ -19,8 +20,23 @@ public class DBManager {
         database = dbHelper.getWritableDatabase();
     }
 
-    public ArrayList<Person> getPersonsList() {
-        return null;
+    public ArrayList<String> getPersonsNamesList() {
+        ArrayList<String> personsNames = new ArrayList<>();
+
+        Cursor cursor = database.query(
+                DBHelper.TABLE_PERSONS,
+                null, null,
+                null, null,
+                null, null
+        );
+        if (cursor.moveToFirst()) {
+            int nameColumnIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
+
+            do {
+                personsNames.add(cursor.getString(nameColumnIndex));
+            } while (cursor.moveToNext());
+        }
+        return personsNames;
     }
 
 }
