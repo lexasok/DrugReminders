@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRV;
     private MainActivityPersonsListAdapter adapter;
 
-    List<Person> persons;
 
 
     @Override
