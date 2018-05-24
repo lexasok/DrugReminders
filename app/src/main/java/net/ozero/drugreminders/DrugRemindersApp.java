@@ -25,17 +25,6 @@ public class DrugRemindersApp extends Application {
         ContentValues contentValues = new ContentValues();
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        contentValues.put(DBHelper.KEY_NAME, "test name 1");
-        database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
-
-        contentValues.put(DBHelper.KEY_NAME, "test name 2");
-        database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
-
-        contentValues.put(DBHelper.KEY_NAME, "test name 3");
-        database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
-
-
-
         Cursor cursor = database.query(
                 DBHelper.TABLE_PERSONS,
                 null, null,
