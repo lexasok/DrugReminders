@@ -19,7 +19,6 @@ public class DrugRemindersApp extends Application {
     public void onCreate() {
         super.onCreate();
         dataManager = new DataManager(this);
-
     }
 
 
