@@ -1,5 +1,6 @@
 package net.ozero.drugreminders;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -46,6 +47,12 @@ public class DataManager {
             persons.add(new Person(personsNames.get(i)));
         }
         return persons;
+    }
+
+    public void addPersonName(String name) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBHelper.KEY_NAME, name);
+        database.insert(DBHelper.TABLE_PERSONS, null, contentValues);
     }
 
 }
