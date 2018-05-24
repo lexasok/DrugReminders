@@ -1,5 +1,6 @@
 package net.ozero.drugreminders;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import net.ozero.drugreminders.DataStructures.Person;
@@ -40,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
         mRV.setLayoutManager(lMM);
         adapter = new MainActivityPersonsListAdapter(((DrugRemindersApp) getApplication()).getPersons());
         mRV.setAdapter(adapter);
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddPersonActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
