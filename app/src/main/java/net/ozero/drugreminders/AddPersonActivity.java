@@ -17,12 +17,15 @@ public class AddPersonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_person);
 
         buttonAdd = findViewById(R.id.buttonAdd);
-        editTextPersonNameInput = findViewById(R.id.editTextPersonName);
+        editTextPersonNameInput = (EditText) findViewById(R.id.editTextPersonName);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String name = editTextPersonNameInput.getText().toString();
+                if (name != "") {
+                    ((DrugRemindersApp) getApplication()).addPerson(name);
+                }
             }
         });
     }
