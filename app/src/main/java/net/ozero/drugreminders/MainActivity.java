@@ -1,6 +1,7 @@
 package net.ozero.drugreminders;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRV;
     private MainActivityPersonsListAdapter adapter;
+    private FloatingActionButton buttonAdd;
 
 
 
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mRV = findViewById(R.id.RVmainActivityPersonsList);
-
+        buttonAdd = findViewById(R.id.buttonAddMainActivity);
 
     }
 
