@@ -20,7 +20,6 @@ public class DrugRemindersApp extends Application {
         super.onCreate();
         dataManager = new DataManager(this);
 
-
     }
 
 
@@ -28,5 +27,14 @@ public class DrugRemindersApp extends Application {
 
     public List<Person> getPersons() {
         return dataManager.getPersons();
+    }
+
+    public void addPerson(String name) {
+        dataManager.addPersonName(name);
+        notifyDataChanged();
+    }
+
+    private void notifyDataChanged() {
+        dataManager = new DataManager(this);
     }
 }
