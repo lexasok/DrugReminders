@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".AddPersonActivity">
 
+    <EditText
+        android:id="@+id/editTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/hint_edit_text_person_name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/text_button_add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextPersonName"
+        app:layout_constraintStart_toEndOf="@+id/editTextPersonName" />
 </android.support.constraint.ConstraintLayout>
