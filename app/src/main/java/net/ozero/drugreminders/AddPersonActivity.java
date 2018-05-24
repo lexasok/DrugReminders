@@ -29,6 +29,5 @@ public class AddPersonActivity extends AppCompatActivity {
             }
         });
 
-
     }
 }
